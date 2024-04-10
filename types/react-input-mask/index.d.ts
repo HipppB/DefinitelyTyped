@@ -40,6 +40,19 @@ export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
      * Use inputRef instead of ref if you need input node to manage focus, selection, etc.
      */
     inputRef?: React.Ref<HTMLInputElement> | undefined;
+
+    /**
+    * Defines format characters with characters as a keys and corresponding RegExp strings as a values. Default ones:
+    * {
+    *   '9': '[0-9]',
+    *   'a': '[A-Za-z]',
+    *   '*': '[A-Za-z0-9]'
+    * }
+    */
+    formatChars?: {
+        [key: string]: string
+    }
+    
     /**
      * In case you need to implement more complex masking behavior, you can provide
      * beforeMaskedStateChange function to change masked value and cursor position
